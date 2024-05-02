@@ -18,5 +18,9 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="fragment.glsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="vertex.glsl" />
   </ItemGroup>
 </Project>

@@ -2,6 +2,7 @@
 	"dependencies": [
 		"opengl",
 		"glew",
-		"glfw3"
+		"glfw3",
+		"glad"
 	]
 }
