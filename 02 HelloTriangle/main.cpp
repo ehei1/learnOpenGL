@@ -2,7 +2,6 @@
 #include <iostream>
 #include <sstream>
 #include <glad/glad.h>
-
 #include <GLFW/glfw3.h>
 
 
@@ -18,16 +17,14 @@ int main()
         return -1;
     }
 
-
-	std::ifstream file( R"(./vertex.glsl)" );
-	if ( !file.is_open() ) {
-		throw std::invalid_argument( "file is not found" );
+	if (std::ifstream file(R"(./02_vertex.glsl)"); !file.is_open()) {
+		throw std::invalid_argument("file is not found");
 	}
 
 	// vertex shader
 	auto vertexShader = 0u;
 	{
-		std::ifstream fstream( R"(./vertex.glsl)" );
+		std::ifstream fstream( R"(./02_vertex.glsl)" );
 		
 		std::stringstream sstream;
 		sstream << fstream.rdbuf();
@@ -46,14 +43,18 @@ int main()
 			glGetShaderInfoLog( vertexShader, static_cast<GLsizei>( std::size( infoLog ) ), {}, infoLog );
 			std::cout << "vertex shader was failed to compile\n" << infoLog << std::endl;
 
-			throw std::invalid_argument( "vertext shader compiling was failed" );
+			throw std::invalid_argument( "vertex shader compiling was failed" );
 		}
 	}
-	
+
+	if (std::ifstream file(R"(./02_vertex.glsl)"); !file.is_open()) {
+		throw std::invalid_argument("file is not found");
+	}
+
 	// fragment shader
 	auto fragmentShader = 0u;
 	{
-		std::ifstream fstream( R"(./fragment.glsl)" );
+		std::ifstream fstream( R"(./02_fragment.glsl)" );
 		std::stringstream sstream;
 		sstream << fstream.rdbuf();
 		
